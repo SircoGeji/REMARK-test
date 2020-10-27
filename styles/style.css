@@ -1,0 +1,241 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin-top: 40px;
+    margin-left: 40px;
+    font-family: 'Manrope', sans-serif;
+}
+
+/*************************************************************
+******************* Слайдер с новостями **********************
+**************************************************************/
+
+.slider {
+    position: relative;
+    overflow: hidden;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+}
+
+.slider__wrapper {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+.slider__item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+}
+
+.slider__item_header {
+    position: relative;
+    margin-top: 10px;
+}
+
+.slider__item_img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+.slider__item_title {
+    color: #424242;
+    white-space: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.3;
+    padding: 10px 0;
+    margin: 0;
+    height: auto;
+}
+
+.slider__control {
+    position: absolute;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    color: #fff;
+    text-align: center;
+    bottom: 0;
+    background: #fff;
+    cursor: pointer;
+}
+
+.slider__control:hover,
+.slider__control:focus {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+}
+
+.slider__control::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.slider__control_left {
+    left: 0
+}
+
+.slider__control_left::before {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23424242' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.slider__control_right {
+    right: 0;
+}
+
+.slider__control_right::before {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23424242' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+/*************************************************************
+*************************** Кнопка ***************************
+**************************************************************/
+
+.button {
+    display: block;
+    margin: 0 auto;
+    width: 119px;
+    height: 32px;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.button-know_more {
+    width: 119px;
+    height: 32px;
+    background-color: #FFDD66;
+    border: none;
+    border-radius: 4px;
+}
+
+/*************************************************************
+************************** "Посты" ***************************
+**************************************************************/
+
+.posts {
+    display: flex;
+    flex-direction: column;
+    margin-top: 24px;
+}
+
+.posts__item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    display: inherit;
+    justify-content: space-between;
+    align-content: center;
+    height: auto;
+    flex-direction: row;
+}
+
+.posts__item_image {
+    width: 50%;
+    vertical-align: center;
+    overflow: hidden;
+    padding-right: 12px;
+    margin: 12px 0 12px;
+    max-height: 212px;
+}
+
+.post_image {
+    height: auto;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-left: 12px;
+}
+
+.posts__item_block {
+    display: block;
+    height: auto;
+    width: 50%;
+    padding-left: 12px;
+    margin: 12px 0 12px;
+}
+
+.posts__item_title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 102%;
+    margin-bottom: 16px;
+}
+
+.posts__item_text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    vertical-align: text-top;
+
+}
+
+/*************************************************************
+******************** Наведение курсора ***********************
+**************************************************************/
+
+.posts__item:hover,
+.slider__item:hover,
+.button-know_more:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.posts__item_title:hover,
+.slider__item_title:hover {
+    color: rgb(221, 0, 0);
+    transition: 0.2s ease;
+}
+
+/*************************************************************
+**************** Изменение размера экрана ********************
+**************************************************************/
+
+@media (min-width: 320px) and (max-width: 767.98px) {
+    .slider__item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .posts__item {
+        flex-direction: column;
+    }
+    .posts__item_image {
+        width: 100%;
+    }
+    .posts__item_block {
+        width: 100%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199.98px) {
+    .slider__item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .slider__item {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+    }
+}
+
