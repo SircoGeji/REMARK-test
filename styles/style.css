@@ -27,6 +27,7 @@ body {
 .slider__wrapper {
     display: flex;
     transition: transform 0.6s ease;
+    padding-top: 20px;
 }
 
 .slider__item {
@@ -64,14 +65,16 @@ body {
     position: absolute;
     top: 0;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     width: 30px;
+    height: 30px;
     color: #fff;
     text-align: center;
     bottom: 0;
     background: #fff;
     cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 .slider__control:hover,
@@ -91,7 +94,7 @@ body {
 }
 
 .slider__control_left {
-    left: 0
+    right: 6%;
 }
 
 .slider__control_left::before {
@@ -99,7 +102,7 @@ body {
 }
 
 .slider__control_right {
-    right: 0;
+    right: 3%;
 }
 
 .slider__control_right::before {
@@ -149,27 +152,26 @@ body {
 
 .posts__item_image {
     width: 50%;
-    vertical-align: center;
     overflow: hidden;
-    padding-right: 12px;
-    margin: 12px 0 12px;
+    margin: 12px;
     max-height: 212px;
+    border-radius: 8px;
+    box-sizing: border-box;
 }
 
 .post_image {
+    /*display: block;*/
     height: auto;
     width: 100%;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-left: 12px;
 }
 
 .posts__item_block {
-    display: block;
+    /*display: block;*/
     height: auto;
     width: 50%;
-    padding-left: 12px;
-    margin: 12px 0 12px;
+    margin: 12px;
+    padding-right: 24px;
+    box-sizing: border-box;
 }
 
 .posts__item_title {
@@ -194,7 +196,7 @@ body {
 .posts__item:hover,
 .slider__item:hover,
 .button-know_more:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     border-radius: 8px;
     cursor: pointer;
 }
@@ -222,6 +224,16 @@ body {
     }
     .posts__item_block {
         width: 100%;
+    }
+    .slider__control {
+        top: 91.5%;
+        align-items: center;
+    }
+    .slider__control_left {
+        left: 46%;
+    }
+    .slider__control_right {
+        right: 46%;
     }
 }
 
